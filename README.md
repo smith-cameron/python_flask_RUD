@@ -30,7 +30,7 @@ class User:
 		self.updated_at = data['updated_at']
 ```
 This `__init__` method will take in self (of course) and a variable to carry a dictionary that is being returned from mysql connection file
-### [[Model - @classmethod]]
+### Model - @classmethod
 use `@classmethod` to query our database, __WHY__?
 *You can use class methods for any methods that are not bound to a specific instance but the class. In practice, you often use class methods for methods that create an instance of the class. When a method creates an instance of the class and returns it, the method is called a factory method.*
 - [ ] Multi-line strings will help debug faster with more complicated queries that have more variables
