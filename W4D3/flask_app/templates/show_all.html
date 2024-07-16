@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>All Users</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1 class="subHead">Show All Users</h1>
+        
+      <div id="displayWrapper">
+      {% for user in all_users %}
+        <!-- loop and display all user info -->
+        <h3>{{user}}</h3>
+        <p>Id: {{user.id}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Name: <a href="/users/edit/{{user.id}}" class="navLink">{{user.first_name}} {{user.last_name}}</a></p>
+        <p>PW: {{user.password}}</p>
+        
+        <a href="/users/delete/{{user.id}}" class="navLink">Delete</a>
+        
+      {% endfor %}
+      </div>
+  </body>
+</html>
